@@ -13,6 +13,7 @@ export default async function handler(request, response) {
             user: 'parthsingh@ghanshyamdigital.com', // Replace with your SMTP username
             pass: 'Ashuandcow1', // Replace with your SMTP password
         },
+        tls: { ciphers: 'SSLv3', rejectUnauthorized: false, },
     });
 
     try {
