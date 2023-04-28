@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(request, response) {
-    console.log('request', request)
+
     const { email } = request.body;
     console.log('email', email);
 
