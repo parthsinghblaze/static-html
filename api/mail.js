@@ -27,11 +27,4 @@ export default async function handler(request, response) {
     } catch (error) {
         console.error(error);
     }
-
-
-    return response.end(`Hello!`);
-
-    // console.log(request)
-    // console.log('email', email)
-    // return response.end(`Hello ${email}!`);
 }
