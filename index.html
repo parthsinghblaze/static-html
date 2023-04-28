@@ -21,7 +21,7 @@
         console.log("hello");
         const emailValue = email.value;
         let data = {
-          emailValue,
+          email: emailValue,
         };
         fetch("/api/mail", {
           method: "POST",
