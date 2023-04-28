@@ -23,8 +23,9 @@ export default async function handler(request, response) {
             text: 'This is a test email',
         });
         console.log('Email sent successfully');
-        return response.end('Email sent successfully');
+        return response.end('Email sent successfully', email);
     } catch (error) {
         console.error(error);
+        return response.end('Error', error);
     }
 }
