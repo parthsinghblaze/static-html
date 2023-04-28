@@ -8,9 +8,67 @@
   </head>
   <body>
     <h1>I am static page</h1>
-    <form action="/api/mail.js" method="post">
-      <input type="email" name="email" />
+    <form onsubmit="handleSubmit(event)">
+      <input id="email" type="email" name="email" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const email = document.querySelector("#email");
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        console.log("hello");
+        const emailValue = email.value;
+        let data = {
+          emailValue,
+        };
+        fetch("/api/mail", {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }).then((res) => {
+          console.log("Response received");
+          if (res.status === 200) {
+            console.log("Response succeeded!");
+          }
+        });
+      }
+    </script>
+    <!-- <form onsubmit="handleSubmit(e)">
+      <input id="email" type="email" name="email" />
       <button>Submit</button>
     </form>
+    <script>
+      const email = document.querySelector("#email");
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        console.log("hello");
+      }
+      //   const handleSubmit = (e) => {
+      //     e.preventDefault();
+      //     const emailValue = email.value;
+      //     let data = {
+      //       emailValue,
+      //     };
+      //     // fetch("/api/mail", {
+      //     //   method: "POST",
+      //     //   headers: {
+      //     //     Accept: "application/json, text/plain, */*",
+      //     //     "Content-Type": "application/json",
+      //     //   },
+      //     //   body: JSON.stringify(data),
+      //     // }).then((res) => {
+      //     //   console.log("Response received");
+      //     //   if (res.status === 200) {
+      //     //     console.log("Response succeeded!");
+      //     //   }
+      //     // });
+      //   };
+    </script> -->
   </body>
 </html>
