@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(request, response) {
+    console.log('request', request)
     const { email } = request.body;
     console.log('email', email);
 
@@ -8,7 +9,7 @@ export default async function handler(request, response) {
     let transporter = nodemailer.createTransport({
         host: 'smtp.office365.com', // Replace with your SMTP host
         port: 587, // Replace with your SMTP port
-        secure: false, // false for TLS; true for SSL
+        secure: true, // false for TLS; true for SSL
         auth: {
             user: 'parthsingh@ghanshyamdigital.com', // Replace with your SMTP username
             pass: 'Ashuandcow1', // Replace with your SMTP password
