@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "nodemailer": "^6.9.1"
-  }
+  },
+  "name": "email-send-in-html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parthsinghblaze/static-html.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parthsinghblaze/static-html/issues"
+  },
+  "homepage": "https://github.com/parthsinghblaze/static-html#readme",
+  "description": ""
 }
